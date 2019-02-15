@@ -7,13 +7,13 @@ const initialState: any = {
 export default function (state = initialState, action: any) {
     switch (action.type) {
         case EPIC.GET_USER.getSuccess():
-            return Object.assign({}, state, {
+            return {
                 data: action.data.data
-            });
+            };
         case EPIC.GET_USER.getFail():
-            return Object.assign({}, state, {
+            return {
                 message: action.data.message
-            });
+            };
         default:
             return state;
     }
